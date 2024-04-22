@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+    h1 #{title}: #{genre.name}
+  
+    if(books.length > 0)
+        p First delete this books first before proceeding 
+    else
+    
+        p Do you really want to delete this Genre?
+
+        form(method='POST')
+            div.form-group
+            input#bookid.form-control(type='hidden', name='bookid', value=genre._id )
+
+            button.btn.btn-primary(type='submit') Delete
+    
